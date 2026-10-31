@@ -38,8 +38,16 @@ sudo make install   # -> /usr/local/bin/wgo
 
 ### Release binaries
 
+Prebuilt static binaries (amd64 + arm64) are published on the
+[releases page](https://github.com/cmerk2021/wgo/releases). Releases are
+built with [GoReleaser](https://goreleaser.com) when a `v*` tag is pushed.
+
+To build release binaries locally:
+
 ```sh
 make release        # static amd64 + arm64 binaries in dist/
+# or, with goreleaser installed:
+goreleaser release --snapshot --clean
 ```
 
 Release builds are fully static (`CGO_ENABLED=0`).
